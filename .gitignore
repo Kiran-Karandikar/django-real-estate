@@ -128,3 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 ./idea
+
+# Django project specific files
+.db.sqlite3
+.idea
