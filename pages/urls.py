@@ -5,7 +5,7 @@ This file was added as part of pages app urls.
 from django.urls import path
 
 # Project modules
-from .views import index
+from .views import index, about
 
 # 3rd party modules
 # N/A
@@ -13,6 +13,7 @@ from .views import index
 # Global Vars
 # N/A
 urlpatterns = [
-        path("", index, name="index")
+        path("", index, name="index"),
+        path("about/", about, name="about")
 ]
 
