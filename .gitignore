@@ -132,3 +132,4 @@ dmypy.json
 # Django project specific files
 .db.sqlite3
 .idea
+/static
