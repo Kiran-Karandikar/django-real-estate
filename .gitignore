@@ -133,3 +133,4 @@ dmypy.json
 .db.sqlite3
 .idea
 /static
+/gen-static
