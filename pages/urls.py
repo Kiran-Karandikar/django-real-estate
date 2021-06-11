@@ -13,7 +13,8 @@ from .views import index, about
 # Global Vars
 # N/A
 urlpatterns = [
-        path("", index, name="index"),
+        path("", index, name="home_path"),
+        path("index/", index, name="index"),
         path("about/", about, name="about")
 ]
 
