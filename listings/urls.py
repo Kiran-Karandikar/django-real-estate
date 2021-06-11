@@ -5,7 +5,7 @@ This file was added as part of pages app urls.
 from django.urls import path
 
 # Project modules
-from .views import listing_home
+from .views import base_listings
 
 # 3rd party modules
 # N/A
@@ -13,6 +13,6 @@ from .views import listing_home
 # Global Vars
 # N/A
 urlpatterns = [
-        path("", listing_home, name="listings_home"),
+        path("", base_listings, name= "base_listings"),
 ]
 

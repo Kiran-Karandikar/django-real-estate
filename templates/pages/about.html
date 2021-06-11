@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block test %}
+{% block page-content %}
 {% load static %}
     <h1>THis is about page</h1>
 
@@ -21,7 +21,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">
+            <a href="{% url 'index' %}">
               <i class="fas fa-home"></i> Home</a>
           </li>
           <li class="breadcrumb-item active"> About</li>
