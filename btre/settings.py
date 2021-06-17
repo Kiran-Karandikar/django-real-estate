@@ -148,5 +148,5 @@ TEMPLATE_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# todo
-# need to add media folder and settings
+MEDIA_ROOT = os.path.join(BASE_DIR, "gen-media")
+MEDIA_URL = "/media/"

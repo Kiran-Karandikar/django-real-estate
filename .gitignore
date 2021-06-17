@@ -135,3 +135,4 @@ dmypy.json
 .idea
 /static
 /gen-static
+/gen-media
