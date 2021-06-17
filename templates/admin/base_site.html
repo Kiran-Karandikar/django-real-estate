@@ -1,0 +1,19 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block title %}
+    {{ "Bt real estate" }} | {{ site_title|default:_('Django site admin') }}
+{% endblock %}
+{% block branding %}
+    <h1 id="head">
+    <!--     This image file doesn't work    -->
+    <img src="{% static 'img/logo.png' %}" class="brand_img" alt="Image Goes here"
+    height="50" width="80">
+        Admin Area
+    </h1>
+{% endblock %}
+
+{%  block extrastyle %}
+    <!-- # todo -->
+    <!-- # not able to load this files -->
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
