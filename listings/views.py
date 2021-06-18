@@ -6,7 +6,7 @@ from .models import Listing
 
 def base_listings(request):
     """
-
+    Serve all listings.
     Args:
         request:
 
@@ -19,3 +19,19 @@ def base_listings(request):
             "listings": all_listings
     }
     return render(request, "listings/listings.html", context)
+
+
+def individual_listing(request, listing_id):
+    """
+    For individual listing
+    Args:
+        request:
+        listing_id:
+
+    Returns:
+
+    """
+    context = {
+            "single_listing": listing_id
+    }
+    return render(request, "listings/listing.html", context)
