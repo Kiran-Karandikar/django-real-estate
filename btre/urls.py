@@ -23,4 +23,11 @@ urlpatterns = [
     # path("pages/", include("pages.urls")),
     path("", include("pages.urls")),
     path("listing/", include("listings.urls"))
-] + static(settings.MEDIA_ROOT, document_root = settings.MEDIA_URL)
+]
+
+# todo
+# this check is for if server is runnning in test environemnt or production
+if settings.DEBUG is True:
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root = settings.MEDIA_ROOT
+    )

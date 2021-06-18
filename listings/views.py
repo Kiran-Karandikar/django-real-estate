@@ -1,6 +1,8 @@
 from django.shortcuts import render
-# Create your views here.
 from django.http import HttpResponse
+from .models import Listing
+# Create your views here.
+
 
 def base_listings(request):
     """
@@ -12,4 +14,8 @@ def base_listings(request):
 
     """
     # return HttpResponse("<h1>listings app up and running</h1>")
-    return render(request, "listings/listings.html")
+    all_listings = Listing.objects.all()
+    context = {
+            "listings": all_listings
+    }
+    return render(request, "listings/listings.html", context)
