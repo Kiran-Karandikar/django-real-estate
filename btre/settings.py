@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 # todo
-# change this database settings
+# change this database settings if needs to revert to dbsqlite3
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -150,3 +150,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "gen-media")
 MEDIA_URL = "/media/"
+
+# todo
+# add humanize app to list of apps
+# django.contrib.humanize
+# {% load humanize %}

@@ -70,5 +70,51 @@ python manage.py createsuperuser;
 ````
 python manage.py collectstatic
 ````
+##TODO
+```
+pip install pylint-django
+```
+```
+pip install wheel
+```
+https://django-extensions.readthedocs.io/en/latest/
 
+```
+pip install django-extensions
+```
+You need to add it to installed_apps in your project’s ``settings.py`` file:
+```python
+INSTALLED_APPS = (
+    'django_extensions',
+)
 
+```
+Generate a graphviz graph of app models
+
+```python manage.py graph_models -a -o myapp_models.png```
+Check templates for rendering errors
+
+````pythonpython manage.py validate_templates````
+Produce a tab-separated list of tuples for a project
+
+```python manage.py show_urls```
+#####Django-filter
+```
+pip install django-filter
+```
+Add django_filters in ``INSTALLED_APPS``:
+```python
+INSTALLED_APPS = [
+    'django_filters',
+]
+
+```
+```
+pip install django-import-export
+```
+Change INSTALLED_APPS of ``setting.py``:
+```python
+INSTALLED_APPS = (
+    'import_export',
+)
+```
