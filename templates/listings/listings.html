@@ -17,7 +17,7 @@
                     <img alt="Image not found" class="card-img-top" src="{{ listing.photo_main.url }}">
                     <div class="card-img-overlay">
                       <h2>
-                        <span class="badge badge-secondary text-white">{{ listing.price | intcomma }}</span>
+                        <span class="badge badge-secondary text-white"> $ {{ listing.price | intcomma }}</span>
                       </h2>
                     </div>
                     <div class="card-body">
@@ -65,27 +65,32 @@
             {% endif %}
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="pagination">
-            <li class="page-item disabled">
-              <a class="page-link" href="#">&laquo;</a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">&raquo;</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <!-- Pagination code -->
+      <!-- # todo check if can be included in partials -->
+        {% if listings.has_other_pages %}
+            <div class="row">
+                <div class="col-md-12">
+                  <ul class="pagination">
+                    <li class="page-item disabled">
+                      <a class="page-link" href="#">&laquo;</a>
+                    </li>
+                    <li class="page-item active">
+                      <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">&raquo;</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        {% endif %}
+
 
 
     </div>

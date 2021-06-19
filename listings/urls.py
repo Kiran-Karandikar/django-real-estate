@@ -12,6 +12,9 @@ from .views import base_listings, individual_listing
 
 # Global Vars
 # N/A
+
+# todo
+# see how you can pass the object in the `ind_listings`
 urlpatterns = [
         path("", base_listings, name= "base_listings"),
         path("<int:listing_id>", individual_listing, name="ind_listing")
