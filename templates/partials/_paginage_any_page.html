@@ -1,0 +1,45 @@
+<!-- Pagination code -->
+{% if items.has_other_pages %}
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination">
+                <!-- Code for left arrow -->
+                {% if items.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ items.previous_page_number }}">&laquo;</a>
+                    </li>
+                    <!-- This is to have left arrow but no link and disabled -->
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">&laquo;</a>
+                    </li>
+                {% endif %}
+
+
+                {% for page_number in items.paginator.page_range %}
+                    {% if page_number == items.number %}
+                        <li class="page-item active">
+                            <a class="page-link">{{ page_number }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                <!-- Code for right arrow -->
+                {% if items.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ items.next_page_number }}">&raquo;</a>
+                    </li>
+                    <!-- This is to have right arrow but no link and disabled -->
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">&raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+{% endif %}
