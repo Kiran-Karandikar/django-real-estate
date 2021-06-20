@@ -1,9 +1,12 @@
 """
 # Docstring
 """
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404, render
+
 from .models import Listing
+
+
 # Create your views here.
 
 
@@ -17,8 +20,7 @@ def base_listings(request):
 
     """
     all_listings = Listing.objects.order_by('-list_date').filter(
-        is_published=True
-    )
+        is_published = True)
     paginated = Paginator(all_listings, 2)
     requested_page = request.GET.get("page")
     paginated_listings = paginated.get_page(requested_page)
@@ -41,7 +43,8 @@ def individual_listing(request, listing_id):
     Returns:
 
     """
+    single_listing = get_object_or_404(Listing, pk = listing_id)
     context = {
-            "single_listing": listing_id
+            "single_listing": single_listing
     }
     return render(request, "listings/listing.html", context)
