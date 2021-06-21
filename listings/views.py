@@ -1,9 +1,12 @@
 """
 # Docstring
 """
+from uuid import uuid1
+
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 
+from btre.constants import *
 from .models import Listing
 
 
@@ -48,3 +51,16 @@ def individual_listing(request, listing_id):
             "single_listing": single_listing
     }
     return render(request, "listings/listing.html", context)
+
+
+def search(request):
+    """
+
+    Args:
+        request:
+    """
+    context = {
+            "us_states": us_states, "bedrooms": bedrooms,
+            "max_price": max_price, "random": uuid1()
+    }
+    return render(request, "listings/search.html", context)
