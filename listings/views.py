@@ -53,14 +53,46 @@ def individual_listing(request, listing_id):
     return render(request, "listings/listing.html", context)
 
 
-def search(request):
+def search(request, **kwargs):
     """
 
     Args:
         request:
     """
+    search_result_set = Listing.objects.order_by("-list_date").filter(
+        is_published = True)
+
+    if 'keywords' in request.GET:
+        keywords = request.GET["keywords"]
+        if keywords:
+            search_result_set = search_result_set.filter(
+                description__icontains = keywords)
+    if 'city' in request.GET:
+        city = request.GET["city"]
+        if city:
+            search_result_set = search_result_set.filter(
+                city__iexact = city.strip())
+    if 'state' in request.GET:
+        state = request.GET["state"]
+        if state:
+            search_result_set = search_result_set.filter(
+                state__iexact = state.strip())
+    if 'bedrooms' in request.GET:
+        bedroom = int(request.GET["bedrooms"])
+        if bedroom:
+            search_result_set = search_result_set.filter(
+                bedrooms__lte = bedroom)
+    if 'price' in request.GET:
+        price = int(request.GET["price"])
+        if price:
+            search_result_set = search_result_set.filter(price__lte = price)
+
+    # if len(search_result_set) == 1:
+    #     search_result_set = list(search_result_set)
+
     context = {
-            "us_states": us_states, "bedrooms": bedrooms,
-            "max_price": max_price, "random": uuid1()
+            "us_states"    : us_states, "bedrooms": bedrooms,
+            "max_price"    : max_price, "random": uuid1(),
+            "search_result": search_result_set, "GetRequestValue": request.GET
     }
     return render(request, "listings/search.html", context)

@@ -19,7 +19,7 @@ def index(request):
         is_published = True)[:3]
     context = {
             "top_listings": top_listings, "us_states": us_states,
-            "bedrooms"    : bedrooms, "max_price": max_price
+            "bedrooms"    : bedrooms, "max_price": max_price,
     }
     return render(request, "pages/index.html", context)
 

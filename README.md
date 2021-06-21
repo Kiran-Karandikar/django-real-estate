@@ -1,32 +1,38 @@
-# django-real-estate
-This repo is for Udemy course "python-django-dev-to-deployment". 
+# Django | Real Estate Project
+This repo is for Udemy course 
+["python-django-dev-to-deployment"](https://www.udemy.com/course/python-django-dev-to-deployment/).
 
-## Steps to install
-1. Create Virtual Env
-    1. Venv is already packaged in this code but if you want to start from scratch follow step 1 and 2
-    2. Venv creation 
-        ```
-       python -m venv ./venv
-       ```
-2. Package Installation
-> #### Upgrade pip first
+Environment setup
+---
+> Virtual Environment
+```
+python -m venv ./venv
+```
+> Pip and setuptools Upgrade
 ````
-pip install --upgrade pip
+pip install --upgrade pip;
+pip install --upgrade setuptools;
+pip install wheel;
 ````
-> #### Django
+> Django Installation
 ````
 pip install django;
 ````
-> #### Postgres
+> Postgres
 ````
 pip install postgres;
 pip install psycopg2;
 pip install psycopg2-binary;
 ````
-> #### Media Files support
+> Media Files support
 ```
-pip install pillow
+pip install pillow;
 ```
+> Pylint
+```
+pip install pylint-django;
+```
+> Install [Microsoft Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 ## Database settings
 1. Create the required database in postgres
 2. Get the connection details like hostname, port, username, password.
@@ -35,12 +41,13 @@ pip install pillow
 create database btree_db;
 \l;
 ```
-### Make server running
-1. Change database settings in following file
+### Server side settings
+- Change database settings in following file
 ````
 myproject\settings.py
 ````
 ```python
+
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -53,8 +60,8 @@ DATABASES = {
     }
 }
 ```
-2. Stop the server and make sure the database connection is working.
-3. Migrate the sql migrations
+- Restart server and make sure the database connection is working.
+- Migrate the sql migrations
 ```
 python manage.py showmigrations;
 python manage.py migrate;
@@ -62,22 +69,20 @@ python manage.py migrate;
 > Here migrations should run successfully and you should be able to see the status ok
 > Otherwise, go back to database and settings.py file and check for any erros.
 
-3. Create admin user
+### Admin stuff
+
+- Create admin user
 ```
 python manage.py createsuperuser;
 ```
-3. Static files Collection
+- Static files Collection
 ````
-python manage.py collectstatic
+python manage.py collectstatic;
 ````
-##TODO
-```
-pip install pylint-django
-```
-```
-pip install wheel
-```
-https://django-extensions.readthedocs.io/en/latest/
+
+### Extras
+
+[django-extensions](https://django-extensions.readthedocs.io/en/latest/)
 
 ```
 pip install django-extensions

@@ -4,6 +4,11 @@
 
 {% block page-content %}
     <h1>this is test search page : {{ random }}</h1>
+    <h2>City :{{ GetRequestValue.city }}</h2>
+    <h2>City :{{ GetRequestValue.state }}</h2>
+    <h2>keywords :{{ GetRequestValue.keywords }}</h2>
+    <h2>bedrooms :{{ GetRequestValue.bedrooms }}</h2>
+    <h2>price :{{ GetRequestValue.price }}</h2>
 
     <section id="showcase-inner" class="showcase-search text-white py-5">
         <div class="container">
@@ -15,20 +20,29 @@
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">Keywords</label>
                                 <input type="text" name="keywords" class="form-control"
-                                       placeholder="Keyword (Pool, Garage, etc)">
+                                       placeholder="Keyword (Pool, Garage, etc)" value="{{ GetRequestValue.keywords }}">
                             </div>
 
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">City</label>
-                                <input type="text" name="city" class="form-control" placeholder="City">
+                                <input type="text" name="city" class="form-control" placeholder="City"
+                                       value="{{ GetRequestValue.city }}">
                             </div>
 
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">State</label>
                                 <select name="state" class="form-control">
-                                    <option selected="true" disabled="disabled">State (All)</option>
+                                    <option selected="true" disabled="disabled">
+                                        State (All)
+                                    </option>
                                     {% for state_name, state_value in us_states.items %}
-                                        <option value="{{ state_name }}">{{ state_value }}</option>
+                                        <option value="{{ state_name }}"
+                                                {% if state_name == GetRequestValue.state %}
+                                                selected
+                                                {% endif %}
+                                        >
+                                            {{ state_value }}
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -40,7 +54,13 @@
                                 <select name="bedrooms" class="form-control">
                                     <option selected="true" disabled="disabled">Bedrooms (Any)</option>
                                     {% for bed, bedn in bedrooms.items %}
-                                        <option value="{{ bed }}">{{ bedn }}</option>
+                                        <option value="{{ bed }}"
+                                                {% if bed == GetRequestValue.bedrooms %}
+                                                selected
+                                                {% endif %}
+                                        >
+                                            {{ bedn }}
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -48,7 +68,12 @@
                                 <select name="price" class="form-control">
                                     <option selected="true" disabled="disabled">Max Price (All)</option>
                                     {% for max_price, max_price_n  in max_price.items %}
-                                        <option value="{{ max_price }}"> {{ max_price_n }}</option>
+                                        <option value="{{ max_price }}"
+                                                {% if max_price == GetRequestValue.price %}
+                                                selected
+                                                {% endif %}
+                                        > {{ max_price_n }}
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -82,55 +107,7 @@
     <section id="listings" class="py-4">
         <div class="container">
             <div class="row">
-
-                <!-- Listing 1 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card listing-preview">
-                        <img class="card-img-top" src="assets/img/homes/home-1.jpg" alt="">
-                        <div class="card-img-overlay">
-                            <h2>
-                                <span class="badge badge-secondary text-white">$490,000</span>
-                            </h2>
-                        </div>
-                        <div class="card-body">
-                            <div class="listing-heading text-center">
-                                <h4 class="text-primary">45 Drivewood Circle</h4>
-                                <p>
-                                    <i class="fas fa-map-marker text-secondary"></i> Norwood MA, 02062</p>
-                            </div>
-                            <hr>
-                            <div class="row py-2 text-secondary">
-                                <div class="col-6">
-                                    <i class="fas fa-th-large"></i> Sqft: 3200
-                                </div>
-                                <div class="col-6">
-                                    <i class="fas fa-car"></i> Garage: 2
-                                </div>
-                            </div>
-                            <div class="row py-2 text-secondary">
-                                <div class="col-6">
-                                    <i class="fas fa-bed"></i> Bedrooms: 3
-                                </div>
-                                <div class="col-6">
-                                    <i class="fas fa-bath"></i> Bathrooms: 2
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row py-2 text-secondary">
-                                <div class="col-12">
-                                    <i class="fas fa-user"></i> Kyle Brown
-                                </div>
-                            </div>
-                            <div class="row text-secondary pb-2">
-                                <div class="col-6">
-                                    <i class="fas fa-clock"></i> 2 days ago
-                                </div>
-                            </div>
-                            <hr>
-                            <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
-                        </div>
-                    </div>
-                </div>
+                {% include 'listings/_listing_template.html' with listings=search_result %}
             </div>
         </div>
     </section>
