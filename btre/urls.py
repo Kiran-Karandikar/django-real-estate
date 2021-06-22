@@ -16,18 +16,16 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path("pages/", include("pages.urls")),
-    path("", include("pages.urls")),
-    path("listing/", include("listings.urls"))
-]
+urlpatterns = [path('admin/', admin.site.urls),
+        # path("pages/", include("pages.urls")),
+        path("", include("pages.urls")),
+        path("listing/", include("listings.urls")),
+        path("account/", include("accounts.urls"))]
 
 # todo
 # this check is for if server is runnning in test environemnt or production
 if settings.DEBUG is True:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root = settings.MEDIA_ROOT
-    )
+    urlpatterns += static(settings.MEDIA_URL,
+        document_root = settings.MEDIA_ROOT)
