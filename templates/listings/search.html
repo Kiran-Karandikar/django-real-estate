@@ -3,13 +3,6 @@
 {% load static %}
 
 {% block page-content %}
-    <h1>this is test search page : {{ random }}</h1>
-    <h2>City :{{ GetRequestValue.city }}</h2>
-    <h2>City :{{ GetRequestValue.state }}</h2>
-    <h2>keywords :{{ GetRequestValue.keywords }}</h2>
-    <h2>bedrooms :{{ GetRequestValue.bedrooms }}</h2>
-    <h2>price :{{ GetRequestValue.price }}</h2>
-
     <section id="showcase-inner" class="showcase-search text-white py-5">
         <div class="container">
             <div class="row text-center">
@@ -109,6 +102,8 @@
             <div class="row">
                 {% include 'listings/_listing_template.html' with listings=search_result %}
             </div>
+            <!-- # todo this is test pagination -->
+            {% include 'partials/_paginage_any_page.html' with items=search_result %}
         </div>
     </section>
 
