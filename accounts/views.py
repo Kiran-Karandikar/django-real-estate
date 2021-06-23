@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect, render
 
 
 # Create your views here.
@@ -11,6 +12,10 @@ def register(request):
     Returns:
 
     """
+    if request.method == "POST":
+        messages.error(request, "This is test message for testing")
+        # messages.info(request, "Testing message for info level")
+        return redirect("register")
     return render(request, "accounts/register.html")
 
 
@@ -23,7 +28,7 @@ def logout(request):
     Returns:
 
     """
-    return render(request, "accounts/register.html")
+    return redirect('index')
 
 
 def login(request):
@@ -35,6 +40,8 @@ def login(request):
     Returns:
 
     """
+    if request.method is "POST":
+        pass
     return render(request, "accounts/login.html")
 
 
