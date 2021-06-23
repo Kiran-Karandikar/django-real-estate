@@ -8,12 +8,17 @@ Environment setup
 ```
 python -m venv ./venv
 ```
-> Pip and setuptools Upgrade
+> Pip and setuptools etc.
 ````
 pip install --upgrade pip;
 pip install --upgrade setuptools;
 pip install wheel;
+pip install autopep8;
 ````
+> Pylint
+```
+pip install pylint-django;
+```
 > Django Installation
 ````
 pip install django;
@@ -28,10 +33,7 @@ pip install psycopg2-binary;
 ```
 pip install pillow;
 ```
-> Pylint
-```
-pip install pylint-django;
-```
+
 > Install [Microsoft Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 ## Database settings
 1. Create the required database in postgres

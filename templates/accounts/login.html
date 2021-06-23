@@ -12,6 +12,7 @@
                                 <i class="fas fa-sign-in-alt"></i> Login</h4>
                         </div>
                         <div class="card-body">
+                            <!-- Alerts -->
                             {% include 'partials_extras/_messages_alerts.html' %}
                             <form action="{% url "login" %}" method="POST">
                                 {% csrf_token %}
