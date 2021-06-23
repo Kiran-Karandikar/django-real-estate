@@ -83,43 +83,48 @@ python manage.py collectstatic;
 ````
 
 ### Extras
+> List of django extensions
+>> For every extension You need to add it to installed_apps in your project’s ``settings.py`` file
 
-[django-extensions](https://django-extensions.readthedocs.io/en/latest/)
+- #### [django-extensions](https://django-extensions.readthedocs.io/en/latest/)
 
 ```
-pip install django-extensions
+pip install django-extensions;
 ```
-You need to add it to installed_apps in your project’s ``settings.py`` file:
 ```python
 INSTALLED_APPS = (
     'django_extensions',
 )
+```
+##### Generate a graphviz graph of app models
 
 ```
-Generate a graphviz graph of app models
-
-```python manage.py graph_models -a -o myapp_models.png```
-Check templates for rendering errors
-
-````pythonpython manage.py validate_templates````
-Produce a tab-separated list of tuples for a project
-
-```python manage.py show_urls```
-#####Django-filter
+python manage.py graph_models -a -o myapp_models.png;
 ```
-pip install django-filter
+
+##### Check templates for rendering errors
+
 ```
-Add django_filters in ``INSTALLED_APPS``:
+python manage.py validate_templates;
+```
+##### Produce a tab-separated list of tuples for a project
+
+```
+python manage.py show_urls;
+```
+- #### [Django-filter](https://django-filter.readthedocs.io/en/stable/index.html)
+```
+pip install django-filter;
+```
 ```python
 INSTALLED_APPS = [
     'django_filters',
 ]
-
 ```
+- #### [django-import-export](https://django-import-export.readthedocs.io/en/latest/index.html)
 ```
-pip install django-import-export
+pip install django-import-export;
 ```
-Change INSTALLED_APPS of ``setting.py``:
 ```python
 INSTALLED_APPS = (
     'import_export',
