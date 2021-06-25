@@ -19,10 +19,11 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [path('admin/', admin.site.urls),
-        # path("pages/", include("pages.urls")),
-        path("", include("pages.urls")),
-        path("listing/", include("listings.urls")),
-        path("account/", include("accounts.urls"))]
+               # path("pages/", include("pages.urls")),
+               path("", include("pages.urls")),
+               path("listing/", include("listings.urls")),
+               path("account/", include("accounts.urls")),
+               path("contact/", include("contacts.urls"))]
 
 # todo
 # this check is for if server is runnning in test environemnt or production
