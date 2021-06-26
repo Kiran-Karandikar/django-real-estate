@@ -6,8 +6,12 @@
     | {{ single_listing.title }}
 {% endblock %}
 
+
 {% block page-content %}
+
     <section id="showcase-inner" class="py-5 text-white">
+        <!-- Alerts -->
+        {% include 'partials_extras/_messages_alerts.html' %}
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-12">
@@ -174,8 +178,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <!-- Alerts -->
-                    {% include 'partials_extras/_messages_alerts.html' %}
+
                     <form action="{% url 'contact_inquiry' %}" method="POST">
                         {% csrf_token %}
                         {% if user.is_authenticated %}
@@ -188,8 +191,10 @@
                         <input type="hidden" name="realtor_email" value="{{ single_listing.realtor.email }}">
                         <div class="form-group">
                             <label for="property_name" class="col-form-label">Property:</label>
-                            <input type="text" name="listing" class="form-control" value="{{ single_listing.title }}"
-                                   disabled>
+                            <input type="text" name="listing_title" class="form-control"
+                                   value="{{ single_listing.title }}"
+                                   readonly="readonly"
+                            >
                         </div>
                         <div class=" form-group">
                             <label for="name" class="col-form-label">Name:</label>
