@@ -1,9 +1,15 @@
 # Django | Real Estate Project
-This repo is for Udemy course 
+- This repo is for Udemy course 
 ["python-django-dev-to-deployment"](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- [Django Deployment](https://gist.github.com/bradtraversy/cfa565b879ff1458dba08f423cb01d71) Guide
 
-Environment setup
----
+## Environment
+#### Installation using pipenv
+```
+pip install pipenv;
+pipenv install;
+```
+#### Standard Installation
 > Virtual Environment
 ```
 python -m venv ./venv
