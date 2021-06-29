@@ -2,6 +2,8 @@ from django.contrib import auth, messages
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 
+from contacts.models import Contacts
+
 
 # Create your views here.
 def register(request):
@@ -104,4 +106,10 @@ def dashboard(request):
     Returns:
 
     """
-    return render(request, "accounts/dashboard.html")
+    get_user_inquiries = Contacts.objects.filter(
+        user_id = int(request.user.id)).order_by("-contact_date")
+
+    context = {
+            "user_inquiries": get_user_inquiries
+    }
+    return render(request, "accounts/dashboard.html", context)

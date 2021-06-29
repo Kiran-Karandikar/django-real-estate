@@ -132,3 +132,14 @@ MEDIA_URL = "/media/"
 MESSAGE_TAGS = {
         messages.INFO: '', 50: 'critical', messages.ERROR: "danger"
 }
+
+# Email functionality
+# Feature
+# Need to add the details here so as to send email
+# Commented for dev environment
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "app-emails")
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 578
+EMAIL_HOST_USER = "from@gmail.com"
+EMAIL_HOST_PASSWORD = "Test@123"
+EMAIL_USE_TLS = True

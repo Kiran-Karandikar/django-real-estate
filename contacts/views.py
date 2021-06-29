@@ -1,4 +1,5 @@
 from django.contrib import messages
+# To send the email
 from django.shortcuts import redirect, render
 
 from .models import Contacts
@@ -32,7 +33,7 @@ def inquiry(request):
         # listing
         if request.user.is_authenticated:
             has_contacted = Contacts.objects.filter(
-                user_id = request.user.id).exists()
+                listing__iexact = listing_title, user_id = user_id).exists()
             if has_contacted:
                 messages.error(request, "You have already made inquiry for "
                                         "this listing")
@@ -43,6 +44,12 @@ def inquiry(request):
 
         )
         listing_inquiry.save()
+
+        # feature
+        # To send email
+        # send_mail(subject = "Test subject", message = "Test message",
+        #     from_email = "from@example.com", recipient_list = [realtor_email],
+        #     fail_silently = False)
         messages.success(request,
             "Made contact inquiry for {}".format(listing_title))
         return redirect("/listing/" + listing_id)
