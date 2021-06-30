@@ -1,0 +1,4 @@
+Django
+MarkupPy
+Pillow
+PyYAML

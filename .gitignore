@@ -102,10 +102,11 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
-env/
-venv/
+# Removing follwoing virutal env commments
+# .env
+# .venv
+# env/
+# venv/
 ENV/
 env.bak/
 venv.bak/
@@ -128,3 +129,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 ./idea
+
+# Django project specific files
+.db.sqlite3
+.idea
+/static
+/gen-static
+/gen-media

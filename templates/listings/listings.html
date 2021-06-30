@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block page-title %}
+    | All listings
+{% endblock %}
+
+{% block page-content %}
+    {% include 'partials/_topbar_listings.html' %}
+    <!-- Listings -->
+    <section id="listings" class="py-4">
+        <div class="container">
+            <div class="row">
+                {% include 'listings/_listing_template.html' with listings=listings %}
+            </div>
+            {% include 'partials/../partials_extras/_paginage_any_page.html' with items=listings %}
+        </div>
+    </section>
+{% endblock %}
