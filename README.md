@@ -55,6 +55,7 @@
 </div>
 
 <!-- BADGES.MD Finish -->
+<!-- BADGES.MD Finish -->
 # Django | Real Estate Project
 - This repo is for Udemy course 
 ["python-django-dev-to-deployment"](https://www.udemy.com/course/python-django-dev-to-deployment/).
@@ -193,6 +194,7 @@ INSTALLED_APPS = (
     'import_export',
 )
 ```
+
 
 ### Other projects
 
