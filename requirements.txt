@@ -27,7 +27,7 @@ markuppy==1.14
 mccabe==0.6.1
 odfpy==1.4.1
 openpyxl==3.0.7
-pillow==8.2.0
+pillow==9.3.0
 pip==23.0; python_version >= '3.7'
 pipenv==2021.5.29
 postgres==3.0.0
