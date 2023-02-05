@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8c02eda5b2744cbe812d37e42f6694f6b740a70f81cc5964b77a3d10f59eb841"
+            "sha256": "d60ff2095a6deb5b9790908c5fb8a679f67bad1a3fb16928c066393d19a57bda"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -253,11 +253,11 @@
         },
         "pipenv": {
             "hashes": [
-                "sha256:05958fadcd70b2de6a27542fcd2bd72dd5c59c6d35307fdac3e06361fb06e30e",
-                "sha256:d180f5be4775c552fd5e69ae18a9d6099d9dafb462efe54f11c72cb5f4d5e977"
+                "sha256:3b80b4512934b9d8e8ce12c988394642ff96bb697680e5b092e59af503178327",
+                "sha256:f84d7119239b22ab2ac2b8fbc7d619d83cf41135206d72a17c4f151cda529fd0"
             ],
             "index": "pypi",
-            "version": "==2021.5.29"
+            "version": "==2022.1.8"
         },
         "postgres": {
             "hashes": [
@@ -434,9 +434,6 @@
             "version": "==0.4.1"
         },
         "tablib": {
-            "extras": [
-
-            ],
             "hashes": [
                 "sha256:41aa40981cddd7ec4d1fabeae7c38d271601b306386bd05b5c3bcae13e5aeb20",
                 "sha256:f83cac08454f225a34a305daa20e2110d5e6335135d505f93bc66583a5f9c10d"
