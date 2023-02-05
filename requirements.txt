@@ -42,7 +42,7 @@ pytz==2021.1
 pyyaml==5.4.1
 setuptools==67.1.0; python_version >= '3.7'
 six==1.16.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 tablib==3.0.0
 toml==0.10.2
 virtualenv-clone==0.5.4
